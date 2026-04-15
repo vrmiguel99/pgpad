@@ -2,71 +2,71 @@
   <img align="center" width="128px" src="https://github.com/user-attachments/assets/28f39044-185c-4750-b2e2-21f56abc773a" />
 	<h1 align="center"><b>pgpad</b></h1>
 	<p align="center">
-		[WIP] A straightforward cross-platform database client
+		[WIP] Un client de base de données multiplateforme simple et efficace
   </p>
 </div>
 
 <img align="center" width="1624" height="1056" alt="image" src="https://github.com/user-attachments/assets/fecbe1e2-d0a5-46cc-8843-78b25a509a3f" />
 
-### What is it?
+### Qu'est-ce que c'est ?
 
-- A lightweight, snappy tool for everyday queries
-  - Quick startup: loads up in less than a second in my machine.
-  - Small memory footprint
-  - Small bundle size
-- Most importantly, pgpad is _free_, and will always be. That includes not ever having a "Community Edition", pop-ups that ask you for an upgrade, or anything of the sort.
+- Un outil léger et réactif pour les requêtes du quotidien
+  - Démarrage rapide : se lance en moins d'une seconde sur ma machine.
+  - Faible empreinte mémoire
+  - Taille de bundle réduite
+- Plus important encore, pgpad est _gratuit_, et le restera toujours. Cela signifie qu'il n'y aura jamais d'« Édition Communautaire », de pop-ups vous invitant à passer à une version supérieure, ni quoi que ce soit de ce genre.
 
-### What is it _not_?
+### Ce que pgpad n'est _pas_
 
-- A fully-fledged professional DB management system like DBeaver.
+- Un système complet de gestion de bases de données professionnelles comme DBeaver.
 
-### Supported databases
+### Bases de données prises en charge
 
-|       Database       |        Status         |                                                         Note                                                          |                                          Driver                                           |
-| :------------------: | :-------------------: | :-------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
-|      PostgreSQL      | Implemented, primary  |                                    Implemented, most used by authors. Unit-tested.                                    |            [`tokio-postgres`](https://github.com/rust-postgres/rust-postgres)             |
-|        SQLite        |      Implemented      |                                               Implemented, unit-tested.                                               |                    [`rusqlite`](https://github.com/rusqlite/rusqlite)                     |
-|     CockroachDB      |      Implemented      |                Implemented due to the Postgres Wire Protocol. No CockroachDB-specific tests currently                 |            [`tokio-postgres`](https://github.com/rust-postgres/rust-postgres)             |
-|        MySQL         |        Planned        |                                                                                                                       |                                            das                                            |
-| Microsoft SQL Server |        Planned        |                                                                                                                       |                                                                                           |
-|        Oracle        |        Planned        |                                                                                                                       |                 [`mysql`](https://github.com/blackbeam/rust-mysql-simple)                 |
-|      Clickhouse      |        Planned        |                                                                                                                       |                [`clickhouse`](https://github.com/ClickHouse/clickhouse-rs)                |
-|      SQLCipher       |        Planned        |                                                                                                                       |                    [`rusqlite`](https://github.com/rusqlite/rusqlite)                     |
-|        DuckDB        |        Planned        |                                                                                                                       | [`duckdb`](<[https://github.com/rusqlite/rusqlite](https://github.com/duckdb/duckdb-rs)>) |
-|       MongoDB        | Not currently planned |                                Would require some refactors to accomodate a NoSQL DBMS                                |                                                                                           |
-|       MariaDB        |                       | Rust lacks a dedicated MariaDB driver. As it stands, we'd be able to support MariaDB only through MySQL compatibility |                                                                                           |
+|     Base de données     |            Statut             |                                                                    Note                                                                    |                                          Driver                                           |
+| :---------------------: | :---------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+|       PostgreSQL        | Implémenté, support principal |                                   Implémenté, le plus utilisé par les auteurs. Tests unitaires.                                            |            [`tokio-postgres`](https://github.com/rust-postgres/rust-postgres)             |
+|         SQLite          |         Implémenté            |                                                    Implémenté, tests unitaires.                                                            |                    [`rusqlite`](https://github.com/rusqlite/rusqlite)                     |
+|       CockroachDB       |         Implémenté            |                    Implémenté grâce au protocole Postgres Wire Protocol. Pas de tests spécifiques à CockroachDB actuellement               |            [`tokio-postgres`](https://github.com/rust-postgres/rust-postgres)             |
+|          MySQL          |          Prévu                |                                                                                                                                            |                                            das                                            |
+| Microsoft SQL Server    |          Prévu                |                                                                                                                                            |                                                                                           |
+|         Oracle          |          Prévu                |                                                                                                                                            |                 [`mysql`](https://github.com/blackbeam/rust-mysql-simple)                 |
+|       Clickhouse        |          Prévu                |                                                                                                                                            |                [`clickhouse`](https://github.com/ClickHouse/clickhouse-rs)                |
+|       SQLCipher         |          Prévu                |                                                                                                                                            |                    [`rusqlite`](https://github.com/rusqlite/rusqlite)                     |
+|         DuckDB          |          Prévu                |                                                                                                                                            | [`duckdb`](<[https://github.com/rusqlite/rusqlite](https://github.com/duckdb/duckdb-rs)>) |
+|        MongoDB          |   Non prévu actuellement      |                              Nécessiterait des refactorisations pour prendre en charge un SGBD NoSQL                                       |                                                                                           |
+|        MariaDB          |                               | Rust ne dispose pas d'un driver MariaDB dédié. En l'état, MariaDB ne pourrait être pris en charge qu'à travers la compatibilité avec MySQL |                                                                                           |
 
-#### Operating systems
+#### Systèmes d'exploitation
 
-`pgpad` supports Windows (7+), macOS (10.15+), and Linux (must have `libwebkit2gtk` 4.1 or higher).
+`pgpad` prend en charge Windows (7+), macOS (10.15+) et Linux (nécessite `libwebkit2gtk` 4.1 ou supérieur).
 
-## Building
+## Compilation
 
-### Requirements
+### Prérequis
 
-- A relatively recent build of `npm`
-- The Rust toolchain, with a minimum version of 1.85
+- Une version relativement récente de `npm`
+- La chaîne d'outils Rust, avec une version minimale de 1.85
 
-### Setup
+### Installation
 
-#### 1. Install dependencies
+#### 1. Installer les dépendances
 
 ```
 npm install
 ```
 
-#### Build executable
+#### Compiler l'exécutable
 
 ```
 npm run tauri build
 ```
 
-#### To start the dev server
+#### Lancer le serveur de développement
 
 ```
 npm run tauri dev
 ```
 
-## A work in progress!
+## Un travail en cours !
 
-Feel free to open issues for bug reports and feature requests.
+N'hésitez pas à ouvrir des issues pour signaler des bugs ou proposer de nouvelles fonctionnalités.
